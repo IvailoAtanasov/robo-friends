@@ -19,7 +19,7 @@ class App extends React.Component {
       .then((users) => this.setState({ robots: users }));
   }
 
-  onSearchChange = (event) => {
+  handleSearch = (event) => {
     this.setState({ searchfield: event.target.value });
   };
   render() {
@@ -36,7 +36,7 @@ class App extends React.Component {
           <h1 className="f1">RoboFriends</h1>
           <SearchBox
             searchField={this.searchField}
-            searchChange={this.onSearchChange}
+            searchChange={this.handleSearch}
           />
           <Scroll>
             <CardList robots={filteredRobots} />
